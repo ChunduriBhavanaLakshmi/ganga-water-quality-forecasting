@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Water Quality Analysis | Ganga AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+Ganga AI Forecasting
+
+</div>
+
+
+<ul>
+
+<li><a href="/home">Home</a></li>
+
+<li><a href="/input">AI Prediction</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/satellite">Satellite</a></li>
+
+<li><a href="/iot">IoT</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h3>
+Water Quality Analysis
+</h3>
+
+
+<h1>
+AI Based River Health Assessment
+</h1>
+
+
+<p>
+
+The system analyzes important water quality
+parameters and provides an overall assessment
+of Ganga river health.
+
+</p>
+
+
+</div>
+
+
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-flask"></i>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Analyzed Water Parameters
+</h2>
+
+
+{% if report %}
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-vial"></i>
+
+<h3>
+pH Level
+</h3>
+
+<p>
+
+{{ report.pH }}
+
+</p>
+
+
+<p>
+
+Shows acidity or alkalinity of water.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<h3>
+Temperature
+</h3>
+
+<p>
+
+{{ report.temperature }} °C
+
+</p>
+
+
+<p>
+
+Indicates thermal changes in water.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h3>
+Dissolved Oxygen
+</h3>
+
+<p>
+
+{{ report.dissolved_oxygen }}
+
+</p>
+
+
+<p>
+
+Represents oxygen available for aquatic life.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>
+Turbidity
+</h3>
+
+<p>
+
+{{ report.turbidity }}
+
+</p>
+
+
+<p>
+
+Shows water clarity level.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-bacteria"></i>
+
+<h3>
+BOD
+</h3>
+
+<p>
+
+{{ report.BOD }}
+
+</p>
+
+
+<p>
+
+Indicates organic pollution level.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+{% else %}
+
+
+<div class="card">
+
+<h3>
+No Analysis Available
+</h3>
+
+
+<p>
+
+Generate AI prediction to view water quality analysis.
+
+</p>
+
+
+<a href="/input" class="btn">
+
+Generate Prediction
+
+</a>
+
+
+</div>
+
+
+{% endif %}
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Water Quality Assessment Result
+</h2>
+
+
+{% if report %}
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>
+Water Condition
+</h3>
+
+
+<p>
+
+{{ report.prediction }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>
+River Health Score
+</h3>
+
+
+<p>
+
+{{ report.score }}/100
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h3>
+Risk Level
+</h3>
+
+
+<p>
+
+{{ report.risk }}
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+{% endif %}
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Water Quality Index Analysis
+</h2>
+
+
+<div class="card">
+
+
+<p>
+
+Water Quality Index (WQI) combines multiple
+parameters such as pH, Dissolved Oxygen,
+BOD and Turbidity to represent overall river health.
+
+</p>
+
+
+<p>
+
+The AI system uses these parameters to classify
+the water quality condition.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Recommendations
+</h2>
+
+
+
+{% if report %}
+
+
+<div class="card">
+
+
+{% for item in report.recommendation %}
+
+
+<p>
+
+<i class="fa-solid fa-check"></i>
+
+{{ item }}
+
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+{% endif %}
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 AI Enabled Ganga Water Quality Forecasting
+
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Prediction Result | Ganga AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+Ganga AI Forecasting
+
+</div>
+
+
+<ul>
+
+<li><a href="/home">Home</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/satellite">Satellite</a></li>
+
+<li><a href="/iot">IoT</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h3>
+AI Prediction Result
+</h3>
+
+
+<h1>
+Ganga River Water Quality Forecast
+</h1>
+
+
+<p>
+
+Random Forest model analyzed the water quality
+parameters and generated the following result.
+
+</p>
+
+
+</div>
+
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Prediction Summary
+</h2>
+
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>
+Location
+</h3>
+
+
+<p>
+
+Station: {{ station }}
+
+</p>
+
+
+<p>
+
+Date: {{ date }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>
+AI Prediction
+</h3>
+
+
+<p>
+
+Water Quality:
+
+<strong>
+{{ prediction }}
+</strong>
+
+</p>
+
+
+<p>
+
+Forecast:
+
+{{ forecast }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>
+Risk Assessment
+</h3>
+
+
+<p>
+
+Health Score:
+
+{{ score }}
+
+</p>
+
+
+<p>
+
+Risk Level:
+
+{{ risk }}
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Water Quality Parameters
+</h2>
+
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<h3>pH</h3>
+
+<p>
+{{ pH }}
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Temperature</h3>
+
+<p>
+{{ temperature }} °C
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Dissolved Oxygen</h3>
+
+<p>
+{{ dissolved_oxygen }}
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Turbidity</h3>
+
+<p>
+{{ turbidity }}
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>BOD</h3>
+
+<p>
+{{ BOD }}
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+AI Recommendations
+</h2>
+
+
+
+<div class="card">
+
+
+{% for item in recommendation %}
+
+<p>
+<i class="fa-solid fa-check"></i>
+{{ item }}
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<div class="card">
+
+
+<h2>
+Download Report
+</h2>
+
+
+<p>
+
+Generate a complete PDF report containing
+prediction details and recommendations.
+
+</p>
+
+
+
+<a href="/download_report" class="btn">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+Download PDF Report
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 AI Enabled Ganga Water Quality Forecasting
+
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>

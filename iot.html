@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>IoT Monitoring | Ganga AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+Ganga AI Forecasting
+
+</div>
+
+
+<ul>
+
+<li><a href="/home">Home</a></li>
+
+
+<li><a href="/input">AI Prediction</a></li>
+
+<li><a href="/satellite">Satellite</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h3>
+IoT Monitoring System
+</h3>
+
+
+<h1>
+Real-Time Water Quality Sensors
+</h1>
+
+
+<p>
+
+IoT sensors collect water parameters and
+provide continuous monitoring for the
+AI Decision Support System.
+
+</p>
+
+
+</div>
+
+
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-microchip"></i>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+IoT Sensor Status
+</h2>
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-wifi"></i>
+
+<h3>
+Sensor Network
+</h3>
+
+
+<p>
+Active
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>
+Connected Sensors
+</h3>
+
+
+<p>
+5 Sensors
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>
+Monitoring
+</h3>
+
+
+<p>
+24/7 Active
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Live Sensor Values
+</h2>
+
+
+
+{% if report %}
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-flask"></i>
+
+<h3>
+pH Sensor
+</h3>
+
+
+<p>
+
+{{ report.pH }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<h3>
+Temperature Sensor
+</h3>
+
+
+<p>
+
+{{ report.temperature }} °C
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h3>
+Dissolved Oxygen Sensor
+</h3>
+
+
+<p>
+
+{{ report.dissolved_oxygen }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>
+Turbidity Sensor
+</h3>
+
+
+<p>
+
+{{ report.turbidity }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-vial"></i>
+
+<h3>
+BOD Sensor
+</h3>
+
+
+<p>
+
+{{ report.BOD }}
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+{% else %}
+
+
+<div class="card">
+
+
+<p>
+
+Generate AI prediction first to view
+sensor values.
+
+</p>
+
+
+<a href="/input" class="btn">
+
+Generate Prediction
+
+</a>
+
+
+</div>
+
+
+{% endif %}
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+IoT Data Processing Flow
+</h2>
+
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<h3>
+1. Data Collection
+</h3>
+
+
+<p>
+
+Sensors collect water quality parameters.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+2. Data Transmission
+</h3>
+
+
+<p>
+
+Sensor values are sent to the monitoring system.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+3. AI Analysis
+</h3>
+
+
+<p>
+
+AI model analyzes collected information.
+
+</p>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+4. Decision Support
+</h3>
+
+
+<p>
+
+System provides water quality status.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 AI Enabled Ganga Water Quality Forecasting
+
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

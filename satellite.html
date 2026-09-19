@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Satellite Monitoring | Ganga AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+Ganga AI Forecasting
+
+</div>
+
+
+<ul>
+
+<li><a href="/home">Home</a></li>
+
+<li><a href="/input">AI Prediction</a></li>
+
+<li><a href="/iot">IoT Monitoring</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+<h3>
+Satellite Monitoring System
+</h3>
+
+
+<h1>
+Satellite Based River Observation
+</h1>
+
+
+<p>
+
+Remote sensing technology helps monitor
+river conditions and detect environmental
+changes.
+
+</p>
+
+</div>
+
+
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-satellite"></i>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Satellite Analysis
+</h2>
+
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<i class="fa-solid fa-earth-americas"></i>
+
+<h3>
+Satellite Data Source
+</h3>
+
+<p>
+Remote Sensing Data
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>
+River Location
+</h3>
+
+<p>
+
+{% if report %}
+
+{{ report.station }}
+
+{% else %}
+
+Ganga River
+
+{% endif %}
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>
+Water Surface Condition
+</h3>
+
+<p>
+
+Good
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h3>
+Pollution Indicator
+</h3>
+
+<p>
+
+Low
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Environmental Assessment
+</h2>
+
+
+
+<div class="card">
+
+
+{% if report %}
+
+
+<p>
+
+Current Water Status:
+
+<strong>
+{{ report.prediction }}
+</strong>
+
+</p>
+
+
+
+<p>
+
+Risk Level:
+
+<strong>
+{{ report.risk }}
+</strong>
+
+</p>
+
+
+
+<p>
+
+Health Score:
+
+<strong>
+{{ report.score }}/100
+</strong>
+
+</p>
+
+
+{% else %}
+
+
+<p>
+
+Generate AI Prediction first to view
+satellite-based assessment.
+
+</p>
+
+
+<a href="/input" class="btn">
+
+Generate Prediction
+
+</a>
+
+
+{% endif %}
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Benefits of Satellite Monitoring
+</h2>
+
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<h3>
+Large Area Monitoring
+</h3>
+
+<p>
+
+Observes wide river regions using satellite imagery.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Pollution Detection
+</h3>
+
+<p>
+
+Helps identify environmental changes.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+Remote Observation
+</h3>
+
+<p>
+
+Monitors locations difficult to access.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 AI Enabled Ganga Water Quality Forecasting
+
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

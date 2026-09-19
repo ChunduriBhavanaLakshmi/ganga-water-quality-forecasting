@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Forecast Dashboard | Ganga AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+Ganga AI Forecasting
+
+</div>
+
+
+<ul>
+
+<li><a href="/home">Home</a></li>
+
+<li><a href="/input">AI Prediction</a></li>
+
+<li><a href="/satellite">Satellite</a></li>
+
+<li><a href="/iot">IoT</a></li>
+
+<li><a href="/analysis">Analysis</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h3>
+Forecast Dashboard
+</h3>
+
+
+<h1>
+Ganga River Water Quality Overview
+</h1>
+
+
+<p>
+
+AI-based decision support dashboard for
+monitoring and forecasting river health.
+
+</p>
+
+
+</div>
+
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Current Water Quality Status
+</h2>
+
+
+{% if report %}
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>
+Water Status
+</h3>
+
+
+<p>
+
+{{ report.prediction }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>
+Health Score
+</h3>
+
+
+<p>
+
+{{ report.score }}/100
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h3>
+Risk Level
+</h3>
+
+
+<p>
+
+{{ report.risk }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h3>
+Forecast
+</h3>
+
+
+<p>
+
+{{ report.forecast }}
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+{% else %}
+
+
+<div class="card">
+
+<h3>
+No Prediction Available
+</h3>
+
+
+<p>
+
+Generate AI prediction to view dashboard.
+
+</p>
+
+
+<a href="/input" class="btn">
+
+Generate Prediction
+
+</a>
+
+
+</div>
+
+
+{% endif %}
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Monitoring Statistics
+</h2>
+
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<h1>
+95%
+</h1>
+
+<p>
+Prediction Accuracy
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h1>
+24/7
+</h1>
+
+<p>
+Continuous Monitoring
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h1>
+10000+
+</h1>
+
+<p>
+Dataset Records
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h1>
+6+
+</h1>
+
+<p>
+Water Parameters
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Quick Access Modules
+</h2>
+
+
+<div class="card-container">
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>
+AI Prediction
+</h3>
+
+<a href="/input">
+Open →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-satellite"></i>
+
+<h3>
+Satellite Monitoring
+</h3>
+
+<a href="/satellite">
+Open →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>
+IoT Monitoring
+</h3>
+
+<a href="/iot">
+Open →
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<h3>
+PDF Report
+</h3>
+
+<a href="/download_report">
+Download →
+</a>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 AI Enabled Ganga Water Quality Forecasting
+
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

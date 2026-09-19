@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Prediction | Ganga AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+Ganga AI Forecasting
+
+</div>
+
+
+<ul>
+
+<li><a href="/home">Home</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/satellite">Satellite</a></li>
+
+<li><a href="/iot">IoT</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h3>
+AI Enabled DSS
+</h3>
+
+
+<h1>
+Ganga River Water Quality Prediction
+</h1>
+
+
+<p>
+
+The AI system uses historical water quality
+dataset and Random Forest algorithm to forecast
+river health conditions.
+
+</p>
+
+
+</div>
+
+
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>
+AI Prediction Process
+</h2>
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<h3>
+1. Dataset Selection
+</h3>
+
+<p>
+
+The system selects water quality records from
+the dataset.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+2. AI Model Processing
+</h3>
+
+<p>
+
+Random Forest algorithm analyzes water parameters.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+3. Prediction Result
+</h3>
+
+<p>
+
+The system predicts river water quality status.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Parameters Used for Prediction
+</h2>
+
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<i class="fa-solid fa-flask"></i>
+
+<h3>
+pH
+</h3>
+
+<p>
+Measures acidity and alkalinity of water.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<h3>
+Temperature
+</h3>
+
+<p>
+Monitors water temperature variations.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h3>
+Dissolved Oxygen
+</h3>
+
+<p>
+Indicates oxygen availability for aquatic life.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>
+Turbidity
+</h3>
+
+<p>
+Measures water clarity and suspended particles.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-vial"></i>
+
+<h3>
+BOD
+</h3>
+
+<p>
+Shows organic pollution level in water.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>
+Generate Prediction
+</h2>
+
+
+<div class="card">
+
+
+<p>
+
+Click the button below to run the trained
+Random Forest model on water quality data.
+
+</p>
+
+
+
+<form action="/predict" method="GET">
+
+
+<button class="btn">
+
+Generate AI Prediction
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 AI Enabled Ganga Water Quality Forecasting
+
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>
